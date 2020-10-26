@@ -25,4 +25,4 @@ window/size/resizable=false
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://assets/env.tres"
