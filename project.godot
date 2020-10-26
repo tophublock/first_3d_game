@@ -17,6 +17,12 @@ _global_script_class_icons={
 
 config/name="First 3d Game"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
