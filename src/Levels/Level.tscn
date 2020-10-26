@@ -30,6 +30,7 @@ material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.946476, 0.322773, 0, -0.322773, 0.946476, 0, 8, 23 )
+visible = false
 
 [node name="Floor" type="StaticBody" parent="."]
 
@@ -42,3 +43,12 @@ material/0 = null
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0 )
+
+[node name="Spatial" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 14 )
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+current = true
+target = NodePath("../Player/Spatial")
+speed = 2.0
+enabled = true
