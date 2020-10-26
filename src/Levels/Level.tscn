@@ -19,7 +19,7 @@ size = Vector3( 30, 2, 30 )
 [node name="Level" type="Spatial"]
 
 [node name="Box" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Box"]
 shape = SubResource( 1 )
@@ -33,6 +33,7 @@ transform = Transform( 1, 0, 0, 0, 0.946476, 0.322773, 0, -0.322773, 0.946476, 0
 visible = false
 
 [node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 shape = SubResource( 3 )
@@ -42,13 +43,18 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0 )
 
 [node name="Spatial" type="Spatial" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 14 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 14 )
 
 [node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
 current = true
 target = NodePath("../Player/Spatial")
-speed = 2.0
+speed = 3.0
 enabled = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.866025, -0.433013, -0.25, 0, -0.5, 0.866025, -0.5, -0.75, -0.433013, 0, 9.84364, -5 )
+light_color = Color( 0.929412, 0.933333, 0.615686, 1 )
+shadow_enabled = true
