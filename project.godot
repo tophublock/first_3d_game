@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="First 3d Game"
+run/main_scene="res://src/UserInterface/MainMenu.tscn"
 
 [display]
 
