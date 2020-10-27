@@ -1,16 +1,3 @@
-[gd_scene load_steps=4 format=2]
-
-[ext_resource path="res://src/Actors/Player.cs" type="Script" id=1]
-[ext_resource path="res://assets/PlayerBall.tres" type="ArrayMesh" id=2]
-
-[sub_resource type="BoxShape" id=3]
-
-[node name="Player" type="KinematicBody"]
-script = ExtResource( 1 )
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = ExtResource( 2 )
-material/0 = null
+version https://git-lfs.github.com/spec/v1
+oid sha256:923b862be979689f051ec3273b659302d99dd5318aa54e37b6b7bfa053c7a08f
+size 470
