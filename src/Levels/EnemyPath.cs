@@ -38,24 +38,39 @@ public class EnemyPath : Path
 
         var newPosition = pathFollow.GlobalTransform.origin + pathFollow.Translation;
         var direction = (newPosition - oldPosition).Normalized();
+
+        // Rotate
+        if (direction.x != 0)
+        {
+            if (this.Name == "EnemyPath")
+            {
+                Console.WriteLine("rotating in z axis");
+            }
+            var axis = direction.x > 0 ? Vector3.Forward : Vector3.Back;
+            this.enemy.Transform = new Transform(
+                this.enemy.Transform.basis.Rotated(axis, DegToRad(enemy.RotationAngle)),
+                this.enemy.Transform.origin
+            );
+        }
+        else if (direction.z != 0)
+        {
+            if (this.Name == "EnemyPath")
+            {
+                Console.WriteLine("rotating in x axis");
+            }
+
+            var axis = direction.z > 0 ? Vector3.Right : Vector3.Left;
+            this.enemy.Transform = new Transform(
+                this.enemy.Transform.basis.Rotated(axis, DegToRad(enemy.RotationAngle)),
+                this.enemy.Transform.origin
+            );
+        }
         if (this.Name == "EnemyPath")
         {
             Console.WriteLine(oldPosition);
             Console.WriteLine(newPosition);
             Console.WriteLine(direction);
             Console.WriteLine("--------");
-        }
-
-        // Rotate
-        if (direction.x != 0)
-        {
-            var orientation = direction.x > 0 ? 1 : -1;
-            enemy.RotateZ(DegToRad(enemy.RotationAngle * -1 * orientation));
-        }
-        if (direction.z != 0)
-        {
-            var orientation = direction.z > 0 ? -1 : 1;
-            enemy.RotateX(DegToRad(enemy.RotationAngle * -1 * orientation));
         }
 
         oldPosition = newPosition;

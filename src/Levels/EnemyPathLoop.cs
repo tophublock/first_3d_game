@@ -26,13 +26,19 @@ public class EnemyPathLoop : Path
         // Rotate
         if (direction.x != 0)
         {
-            var orientation = direction.x > 0 ? 1 : -1;
-            enemy.RotateZ(DegToRad(enemy.RotationAngle * -1 * orientation));
+            var axis = direction.x > 0 ? Vector3.Forward: Vector3.Back;
+            this.enemy.Transform = new Transform(
+                this.enemy.Transform.basis.Rotated(axis, DegToRad(enemy.RotationAngle)),
+                this.enemy.Transform.origin
+            );
         }
         if (direction.z != 0)
         {
-            var orientation = direction.z > 0 ? -1 : 1;
-            enemy.RotateX(DegToRad(enemy.RotationAngle * -1 * orientation));
+            var axis = direction.z > 0 ? Vector3.Right: Vector3.Left;
+            this.enemy.Transform = new Transform(
+                this.enemy.Transform.basis.Rotated(axis, DegToRad(enemy.RotationAngle)),
+                this.enemy.Transform.origin
+            );
         }
 
         oldPosition = newPosition;
