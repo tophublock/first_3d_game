@@ -40,25 +40,16 @@ public class EnemyPath : Path
         var direction = (newPosition - oldPosition).Normalized();
 
         // Rotate
-        if (direction.x != 0)
+        if (Math.Abs(direction.x) == 1)
         {
-            if (this.Name == "EnemyPath")
-            {
-                Console.WriteLine("rotating in z axis");
-            }
-            var axis = direction.x > 0 ? Vector3.Forward : Vector3.Back;
+            var axis = direction.x > 0 ? Vector3.Forward: Vector3.Back;
             this.enemy.Transform = new Transform(
                 this.enemy.Transform.basis.Rotated(axis, DegToRad(enemy.RotationAngle)),
                 this.enemy.Transform.origin
             );
         }
-        else if (direction.z != 0)
+        if (Math.Abs(direction.z) == 1)
         {
-            if (this.Name == "EnemyPath")
-            {
-                Console.WriteLine("rotating in x axis");
-            }
-
             var axis = direction.z > 0 ? Vector3.Right : Vector3.Left;
             this.enemy.Transform = new Transform(
                 this.enemy.Transform.basis.Rotated(axis, DegToRad(enemy.RotationAngle)),
