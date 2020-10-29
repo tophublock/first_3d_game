@@ -48,6 +48,4 @@ public class EnemyPathLoop : Path
     {
         return (Mathf.Pi / 180) * degrees;
     }
-
-
 }
