@@ -20,8 +20,8 @@ public class Enemy : Area
     {
         if (body is Player player)
         {
-            Console.WriteLine("hit player");
             player.QueueFree();
+            GetTree().ChangeScene("res://src/UserInterface/GameOver.tscn");
         }
     }
 }
