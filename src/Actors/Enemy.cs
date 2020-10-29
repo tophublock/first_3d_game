@@ -15,4 +15,13 @@ public class Enemy : Area
     public override void _PhysicsProcess(float delta)
     {
     }
+
+    public void OnEnemyBodyEntered(Node body)
+    {
+        if (body is Player player)
+        {
+            Console.WriteLine("hit player");
+            player.QueueFree();
+        }
+    }
 }
