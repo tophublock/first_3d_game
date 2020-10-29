@@ -7,11 +7,6 @@ public class Coin : Area
     public delegate void CoinCollected();
     public float RotationSpeed = 3;
 
-    public override void _Ready()
-    {
-
-    }
-
     public override void _PhysicsProcess(float delta)
     {
         this.Transform = new Transform(
@@ -28,6 +23,9 @@ public class Coin : Area
     {
         if (body is Player player)
         {
+            var collision = GetNode<CollisionShape>("CollisionShape");
+            collision.Hide();
+
             var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
             var timer = GetNode<Timer>("Timer");
 
