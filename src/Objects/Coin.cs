@@ -20,4 +20,19 @@ public class Coin : Area
     {
         return (Mathf.Pi / 180) * degrees;
     }
+
+    public void OnCoinBodyEntered(Node body)
+    {
+        if (body is Player player)
+        {
+            Console.WriteLine("coin collected!");
+            var timer = GetNode<Timer>("Timer");
+            timer.Start();
+        }
+    }
+
+    public void OnTimerTimeout()
+    {
+        QueueFree();
+    }
 }
