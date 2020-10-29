@@ -4,6 +4,7 @@ using System;
 public class HUD : CanvasLayer
 {
 
+    private int coins = 0;
     private Label coinCount;
 
     public override void _Ready()
@@ -12,13 +13,9 @@ public class HUD : CanvasLayer
         coinCount.Text = "0";
     }
 
-//  public override void _Process(float delta)
-//  {
-//
-//  }
-
-    public void UpdateCoinCount(int count)
+    public void OnCoinCollected()
     {
-        coinCount.Text = count.ToString();
+        coins++;
+        coinCount.Text = coins.ToString();
     }
 }

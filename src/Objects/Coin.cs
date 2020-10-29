@@ -3,7 +3,10 @@ using System;
 
 public class Coin : Area
 {
+    [Signal]
+    public delegate void CoinCollected();
     public float RotationSpeed = 3;
+
     public override void _Ready()
     {
 
@@ -33,6 +36,7 @@ public class Coin : Area
 
     public void OnTimerTimeout()
     {
+        EmitSignal(nameof(CoinCollected));
         QueueFree();
     }
 }
