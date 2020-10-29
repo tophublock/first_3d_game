@@ -28,8 +28,10 @@ public class Coin : Area
     {
         if (body is Player player)
         {
-            Console.WriteLine("coin collected!");
+            var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
             var timer = GetNode<Timer>("Timer");
+
+            animationPlayer.Play("bounce");
             timer.Start();
         }
     }
