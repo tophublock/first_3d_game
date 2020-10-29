@@ -18,5 +18,21 @@ public class Level : Spatial
     {
         coins++;
         hud.UpdateCoinCount(coins);
+
+        if (coins >= MAX_COINS)
+        {
+            var timer = new Timer();
+            timer.WaitTime = 0.25f;
+            timer.OneShot = true;
+            timer.Connect("timeout", this, nameof(EndGame));
+
+            AddChild(timer);
+            timer.Start();
+        }
+    }
+
+    public void EndGame()
+    {
+        GetTree().ChangeScene("res://src/UserInterface/End.tscn");
     }
 }
