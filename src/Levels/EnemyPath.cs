@@ -56,13 +56,6 @@ public class EnemyPath : Path
                 this.enemy.Transform.origin
             );
         }
-        if (this.Name == "EnemyPath")
-        {
-            Console.WriteLine(oldPosition);
-            Console.WriteLine(newPosition);
-            Console.WriteLine(direction);
-            Console.WriteLine("--------");
-        }
 
         oldPosition = newPosition;
     }
