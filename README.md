@@ -1,6 +1,6 @@
 # first_3d_game
 
-A 3d coin-collection game using C# in Godot. I followed this great [tutorial](https://www.youtube.com/watch?v=VeCrE-ge8xM&list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ) by BornCG(https://www.youtube.com/channel/UCdioEctcBLd2nw2aQkl8msw).
+A 3d coin-collection game using C# in Godot. I followed this great [tutorial](https://www.youtube.com/watch?v=VeCrE-ge8xM&list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ) by [BornCG](https://www.youtube.com/channel/UCdioEctcBLd2nw2aQkl8msw).
 
 ## Key Takeaways
 
